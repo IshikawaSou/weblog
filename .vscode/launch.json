@@ -27,6 +27,12 @@
       "request": "launch",
       "name": "Gulp起動",
       "program": "${workspaceFolder}/node_modules/gulp/bin/gulp.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "MongoInsert",
+      "program": "${workspaceFolder}/lib/database/insert-sample.js"
     }
   ]
 }
