@@ -9,7 +9,7 @@ router.get("/*", (req, res) => {
   var regexp = new RegExp(`.*${keyword}.*`);
   var query = {
     $or: [{ title: regexp }, { content: regexp }]
-  }
+  };
 
   MongoClient.connect(CONNECTION_URL, OPTIONS, (error, client) => {
     var db = client.db(DATABASE);

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Member Page</title>
+
+  <%- include("../_share/stylesheets.ejs") %>
+</head>
+
+<body>
+
+  <%- include("../_share/navbar.ejs") %>
+
+  <main role="main" class="container">
+
+    <div class="border-bottom mt-5 mb-5">
+      <h1>Member Menu</h1>
+    </div>
+    <nav class="new flex-column">
+      <a class="nav-link active disabled">Home</a>
+      <a class="nav-link" href="/account/posts/regist">Regist new Script</a>
+      <a class="nav-link" href="#">Edit/Delete Script</a>
+    </nav>
+
+  </main>
+
+  <%- include("../_share/javascripts.ejs") %>
+</body>
+
+</html>

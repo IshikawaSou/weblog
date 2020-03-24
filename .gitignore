@@ -1,6 +1,7 @@
 node_modules/
 public/development/
 public/production/
+log/
 
 *.com
 *.class
