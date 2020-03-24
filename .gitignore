@@ -1,7 +1,6 @@
 node_modules/
 public/development/
 public/production/
-log/
 
 *.com
 *.class
@@ -9,3 +8,4 @@ log/
 *.exe
 *.o
 *.so
+*.log
