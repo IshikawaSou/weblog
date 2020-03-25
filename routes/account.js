@@ -59,6 +59,11 @@ router.get("/login", (req, res) => {
 
 router.post("/login", authenticate());
 
+router.post("/logout", (req, res) => {
+  req.logOut();
+  res.redirect("/account/login");
+});
+
 router.get("/posts/regist", authorize("readWrite"), (req, res) => {
   res.render("./account/posts/regist-form.ejs");
 });
