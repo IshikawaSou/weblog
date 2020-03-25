@@ -5,6 +5,6 @@ module.exports = {
     PASSWORD_STRETCH: 3
   },
   search: {
-    MAX_ITEM_PER_PAGE: 2
+    MAX_ITEM_PER_PAGE: 4
   }
 };
