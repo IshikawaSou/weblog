@@ -38,7 +38,7 @@ var createRegistData = function (body) {
 };
 
 router.get("/", (req, res) => {
-  tokens.secret((error, secret)=>{
+  tokens.secret((error, secret) => {
     var token = tokens.create(secret);
     req.session._csrf = secret;
     res.cookie("_csrf", token);
@@ -69,7 +69,7 @@ router.post("/posts/regist/execute", (req, res) => {
   var secret = req.session._csrf;
   var token = req.cookies._csrf;
 
-  if(tokens.verify(secret, token) === false) {
+  if (tokens.verify(secret, token) === false) {
     throw new Error("Invalid Token");
   }
 
@@ -87,14 +87,18 @@ router.post("/posts/regist/execute", (req, res) => {
       .then(() => {
         delete req.session._csrf;
         res.clearCookie("_csrf");
-        res.render("./account/posts/regist-complete.ejs");
-      }).catch((error)=>{
+        res.redirect("/account/posts/regist/complete");
+      }).catch((error) => {
         throw error;
-      }).then(()=>{
+      }).then(() => {
         client.close();
       });
   });
 
+});
+
+router.get("/posts/regist/complete", (req, res) => {
+  res.render("./account/posts/regist-complete.ejs");
 });
 
 module.exports = router;
